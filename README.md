@@ -38,7 +38,7 @@ d2g = Diff2GIF(g, Params)
 d2g.make('mygif.gif')
 ```
 
-which produces the following
+which produces the following <br>
 ![](./mygif.gif)
 
 You can also customize the gif to your likings:
