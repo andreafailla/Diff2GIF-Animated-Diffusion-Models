@@ -2,3 +2,8 @@
 .DS_Store
 .ipynb_checkpoints/Diff2GIF-checkpoint.ipynb
 __pycache__/diff2gif.cpython-38.pyc
+*.xml
+*.iml
+.ipynb_checkpoints/tutorial-checkpoint.ipynb
+.ipynb_checkpoints/diff2gif-checkpoint.py
+__pycache__/diff2gif.cpython-39.pyc
