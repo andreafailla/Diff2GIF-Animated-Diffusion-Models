@@ -7,3 +7,5 @@ __pycache__/diff2gif.cpython-38.pyc
 .ipynb_checkpoints/tutorial-checkpoint.ipynb
 .ipynb_checkpoints/diff2gif-checkpoint.py
 __pycache__/diff2gif.cpython-39.pyc
+*.pyc
+*.pyc
