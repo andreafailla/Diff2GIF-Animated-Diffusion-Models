@@ -5,18 +5,17 @@
 
 Create your own animated network visualization by exploiting a diffusion model!
 
+![SIR Epidemics model GIF](./SIR-model.gif)
+
 ## What is this?
 Diff2GIF is a web app that allows you to create animated network visualizations by selecting among several graph topologies and
 diffusion models. 
 The app is based on [NetworkX](https://networkx.org/), [NDlib](https://ndlib.readthedocs.io/en/latest/) and is built with 
 [Streamlit](https://streamlit.io/).
 
-<<<<<<< HEAD
 ![APP Screenshot](./appss.png)
-=======
-![SIR Epidemics model GIF](./SIR-model.gif)
 
->>>>>>> 2c9261b5833e8071f73aaa118255c57ee45b7552
+
 
 ## How do I use it?
 You can use the app by clicking on the Streamlit badge above. Alternatively, you can run the app locally by cloning this repository and running the following commands:
@@ -31,8 +30,6 @@ To create your own GIF, follow these steps:
 6. Select the duration of the GIF's frames 
 7. Click on the "Generate GIF" button and wait for the GIF to be generated 
 8. Download and enjoy your GIF!
-
-
 
 
 #### And remember: it's <b>JIF</b>, not <b>GIF</b>!
