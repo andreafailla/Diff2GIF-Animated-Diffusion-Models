@@ -18,7 +18,7 @@ The app is based on [NetworkX](https://networkx.org/), [NDlib](https://ndlib.rea
 
 
 ## How do I use it?
-You can use the app by clicking on the Streamlit badge above. Alternatively, you can run the app locally by cloning this repository and running the following commands:
+You can use the app by <b>clicking on the Streamlit badge above</b>. Alternatively, you can run the app locally by cloning this repository and running the following commands:
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
