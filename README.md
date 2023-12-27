@@ -1,6 +1,7 @@
 # Diff2GIF – Animated Diffusion Models
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://diff2gif.streamlit.app/)
 [![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
+![License: BSD 3-Clause](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)
 
 Create your own animated network visualization by exploiting a diffusion model!
 
@@ -11,7 +12,9 @@ diffusion models.
 The app is based on [NetworkX](https://networkx.org/), [NDlib](https://ndlib.readthedocs.io/en/latest/) and is built with 
 [Streamlit](https://streamlit.io/).
 
-## How does I use it?
+![APP Screenshot](./appss.png)
+
+## How do I use it?
 You can use the app by clicking on the Streamlit badge above. Alternatively, you can run the app locally by cloning this repository and running the following commands:
 ```bash
 pip install -r requirements.txt
