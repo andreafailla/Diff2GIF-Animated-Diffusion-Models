@@ -5,23 +5,23 @@ from helpers import handle_topology_parameters, handle_model_parameters, generat
 from diff2gif import Diff2GIF
 
 
-def slow_type(t, placeholder):
+def slow_type(text, placeholder, slp=.01):
     """type a string slowly in a placeholder"""
-    for i in range(len(t)+1):
-        placeholder.write(t[:i])
-        time.sleep(.01)
+    for i in range(len(text)+1):
+        placeholder.write(text[:i])
+        time.sleep(slp)
 
 
 st.title("Diff2GIF")
 st.markdown("##### Create your own animated network visualization by exploiting a diffusion model!")
-st.write(
-    "Diff2GIF is a tool that allows you to create animated network visualizations by exploiting a diffusion model. "
-    "Here you can choose a network topology and a diffusion model, and then generate a GIF animation of the resulting diffusion process."
-    "\n This tool is based on the *NDLIB* Python library, which provides a high-level abstraction layer for "
-    "modeling, simulating, and analyzing diffusion processes on complex networks."
-    "\n For more information on the diffusion models, please refer to the [official documentation]("
-    "https://ndlib.readthedocs.io/en/latest/index.html)"
-    "")
+
+towrite = """Diff2GIF is a tool that allows you to create animated network visualizations by exploiting a diffusion 
+model. Here you can choose a network topology and a diffusion model, and then generate a GIF animation of the 
+resulting diffusion process. \n This tool is based on the *NDLIB* Python library, which provides a high-level 
+abstraction layer for modeling, simulating, and analyzing diffusion processes on complex networks. \n For more 
+information on the diffusion models, please refer to the [official documentation]( 
+https://ndlib.readthedocs.io/en/latest/index.html)"""
+st.markdown(towrite)
 
 col1, col2 = st.columns(2, gap='large')
 
