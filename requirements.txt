@@ -1,0 +1,9 @@
+networkx
+ndlib
+matplotlib
+numpy
+imageio
+streamlit
+pygraphviz
+scikit-learn
+```
