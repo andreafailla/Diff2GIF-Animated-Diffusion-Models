@@ -1,77 +1,29 @@
-# Diff2GIF-Animated Diffusion Models
- ### Create your own animated network visualization by exploiting a diffusion model!
-![GIF visualization of SIR diffusion model](./SIR-model.gif)
+# Diff2GIF – Animated Diffusion Models
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://diff2gif.streamlit.app/)
+[![Python 3.9](https://img.shields.io/badge/python-3.9-blue.svg)](https://www.python.org/downloads/release/python-390/)
 
+Create your own animated network visualization by exploiting a diffusion model!
 
-You can create a GIF as follows
+![SIR Epidemics model GIF](./SIR-model.gif)
+## What is this?
+Diff2GIF is a web app that allows you to create animated network visualizations by selecting among several graph topologies and
+diffusion models. 
+The app is based on [NetworkX](https://networkx.org/), [NDlib](https://ndlib.readthedocs.io/en/latest/) and is built with 
+[Streamlit](https://streamlit.io/).
 
+## How does I use it?
+You can use the app by clicking on the Streamlit badge above. Alternatively, you can run the app locally by cloning this repository and running the following commands:
+```bash
+pip install -r requirements.txt
+streamlit run app.py
 ```
-# import
-from diff2gif import Diff2GIF
-
-# create network
-import networkx as nx 
-
-# network diffusion library
-#!pip3 install ndlib
-import ndlib.models.ModelConfig as mc 
-import ndlib.models.epidemics as ep
-
-# Network topology
-g = nx.barabasi_albert_graph(50, 2, seed=42)
-# Model selection
-model = ep.SIRModel(g) # check out other models at 
-                       # https://ndlib.readthedocs.io/en/latest/index.html
-
-# Model Configuration
-cfg = mc.Configuration()
-cfg.add_model_parameter('beta', 0.4)
-cfg.add_model_parameter("gamma", 0.1)
-cfg.add_model_parameter("fraction_infected", 0.1)
-model.set_initial_status(cfg) 
-
-
-class Params:
-    model = model
-    n_iters = 20
-d2g = Diff2GIF(g, Params)
-d2g.make('mygif.gif')
-```
-
-which produces the following <br>
-![](./mygif.gif)
-
-You can also customize the gif to your likings:
-```
-model = ep.SIRModel(g)
-cfg = mc.Configuration()
-cfg.add_model_parameter('beta', 0.4)
-cfg.add_model_parameter("gamma", 0.1)
-cfg.add_model_parameter("fraction_infected", 0.1)
-model.set_initial_status(cfg) 
-
-class Params:
-    model = model
-    n_iters = 20
-
-    pos = nx.circular_layout(g)
-    
-    colors = { # check model.available_statuses for possible node statuses
-        "Susceptible": "gray",  
-        "Infected": "#891414",
-        "Removed": "#2d0707",  
-        "edges": "#999999",  
-    }
-    node_size = 200
-    alpha = 0.7
-    width = 0.1
-
-d2g = Diff2GIF(g, Params)
-# you can also change the snapshot duration
-d2g.make('mysecondgif.gif', snap_duration=0.1)
-```
-![](./mysecondgif.gif)
-
+To create your own GIF, follow these steps:
+1. Select a graph topology (e.g., Erdos-Renyi, Barabasi-Albert, etc.)
+2. Select an Epidemic/Opinion diffusion model (e.g., SIR, Deffuant, etc.)
+5. Select the number of iterations (i.e., the number of frames of the GIF)
+6. Select the duration of the GIF's frames 
+7. Click on the "Generate GIF" button and wait for the GIF to be generated 
+8. Download and enjoy your GIF!
 
 
 
