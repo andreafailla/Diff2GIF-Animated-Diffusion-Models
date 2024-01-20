@@ -40,10 +40,15 @@ with col2:
     st.subheader("Model")
     model_method, model_config = handle_model_parameters()
 
-n_iters = st.number_input("Number of iterations", min_value=10, max_value=100, value=30)
-ms = st.number_input(
-    "Snapshot duration (in ms)", min_value=100, max_value=1000 * 3, value=1000
-)
+col3, col4 = st.columns(2, gap="large")
+with col3:
+    n_iters = st.slider(
+        "Number of iterations", min_value=10, max_value=100, value=30, step=10
+    )
+with col4:
+    ms = st.slider(
+        "Animation speed (ms)", min_value=50, max_value=1000, value=100, step=50
+    )
 
 if st.button("Run"):
     placeholder = st.empty()
