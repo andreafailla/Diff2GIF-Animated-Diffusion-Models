@@ -91,7 +91,7 @@ class Diff2GIF:
             "with_labels": params.with_labels
             if hasattr(params, "with_labels")
             else False,
-            "width": params.width if hasattr(params, "width") else 0.1,
+            "width": params.width if hasattr(params, "width") else 0.5,
             "node_size": params.node_size if hasattr(params, "node_size") else 90,
         }
         self.status_dict = self.__get_status_dict()
