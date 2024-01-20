@@ -1,19 +1,26 @@
 import time
 
 import streamlit as st
-from helpers import handle_topology_parameters, handle_model_parameters, generate_synth_graph
+
 from diff2gif import Diff2GIF
+from helpers import (
+    handle_topology_parameters,
+    handle_model_parameters,
+    generate_synth_graph,
+)
 
 
-def slow_type(text, placeholder, slp=.01):
+def slow_type(text, placeholder, slp=0.01):
     """type a string slowly in a placeholder"""
-    for i in range(len(text)+1):
+    for i in range(len(text) + 1):
         placeholder.write(text[:i])
         time.sleep(slp)
 
 
 st.title("Diff2GIF")
-st.markdown("##### Create your own animated network visualization by exploiting a diffusion model!")
+st.markdown(
+    "##### Create your own animated network visualization by exploiting a diffusion model!"
+)
 
 towrite = """Diff2GIF is a tool that allows you to create animated network visualizations by exploiting a diffusion 
 model. Here you can choose a network topology and a diffusion model, and then generate a GIF animation of the 
@@ -23,7 +30,7 @@ information on the diffusion models, please refer to the [official documentation
 https://ndlib.readthedocs.io/en/latest/index.html)"""
 st.markdown(towrite)
 
-col1, col2 = st.columns(2, gap='large')
+col1, col2 = st.columns(2, gap="large")
 
 with col1:
     st.subheader("Topology")
@@ -34,7 +41,9 @@ with col2:
     model_method, model_config = handle_model_parameters()
 
 n_iters = st.number_input("Number of iterations", min_value=10, max_value=100, value=30)
-ms = st.number_input("Snapshot duration (in ms)", min_value=100, max_value=1000*3, value=1000)
+ms = st.number_input(
+    "Snapshot duration (in ms)", min_value=100, max_value=1000 * 3, value=1000
+)
 
 if st.button("Run"):
     placeholder = st.empty()
@@ -52,7 +61,10 @@ if st.button("Run"):
 
 
     d2g = Diff2GIF(graph, Params)
-    slow_type( "Generating GIF...(this may take a while :face_with_rolling_eyes:)", placeholder)
+    slow_type(
+        "Generating GIF (this may take a while :face_with_rolling_eyes:)...",
+        placeholder,
+    )
     d2g.make("generated.gif", ms)
 
     # display
@@ -60,12 +72,8 @@ if st.button("Run"):
     st.image("generated.gif")
     slow_type("Done! :tada: download your GIF below :point_down:", placeholder)
     # download
-    with open('generated.gif', 'rb') as file:
-        btn = st.download_button(
-            label='Download GIF',
-            data=file,
-            mime='image/gif'
-        )
+    with open("generated.gif", "rb") as file:
+        btn = st.download_button(label="Download GIF", data=file, mime="image/gif")
 footer = """<style>
 a:link , a:visited{
 color: blue;
